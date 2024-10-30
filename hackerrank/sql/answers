@@ -1,0 +1,15 @@
+1. 
+select * from city where CountryCode = 'USA' and population > 100000;
+
+
+2.
+select city, length(city) as city_length from station order by length(city) asc, city asc limit 1;
+select city, length(city) as city_length from station order by length(city) desc, city asc limit 1;
+
+3. 
+select distinct city from (
+    select city, substring(city, 1, 1) as starting_char from station) a
+    where a.starting_char in ('a', 'e', 'i', 'o', 'u');
+
+
+
